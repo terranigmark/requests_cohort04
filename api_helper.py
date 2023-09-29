@@ -13,3 +13,16 @@ def create_post(title, body, userId):
         'userId': userId
     }
     response = requests.post('https://jsonplaceholder.typicode.com/posts', json=payload)
+
+def update_post(post_id, title, body, userId):
+    payload = {
+        'title': title,
+        'body': body,
+        'userId': userId
+    }
+    response = requests.put(f'https://jsonplaceholder.typicode.com/posts/{post_id}', json=payload)
+
+def delete_post(post_id):
+    response = requests.delete(f'https://jsonplaceholder.typicode.com/posts/{post_id}')
+
+
